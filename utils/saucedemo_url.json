@@ -3,5 +3,6 @@
   "cridentials": {
     "username": "standard_user",
     "password": "secret_sauce"
-  }
+  },
+  "timeout": 10
 }

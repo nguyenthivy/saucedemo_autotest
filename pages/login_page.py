@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 from bases.base_page import BasePage
 from pages import LOGIN_BUTTON_XPATH, USERNAME_TEXBOX_XPATH, PASSWORD_TEXBOX_XPATH , PRODUCTS_TITLE_XPATH
@@ -8,9 +6,8 @@ from pages import LOGIN_BUTTON_XPATH, USERNAME_TEXBOX_XPATH, PASSWORD_TEXBOX_XPA
 class LoginPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 15)
 
-    def dologin(self, username, password):
+    def do_login(self, username, password):
         self.enter_username(username)
         self.enter_password(password)
         self.click_login()

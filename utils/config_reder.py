@@ -23,3 +23,6 @@ class ConfigReader:
     def get_password():
         return ConfigReader.load_config()['cridentials']['password']
     
+    @staticmethod
+    def get_timeout():
+        return ConfigReader.load_config()['timeout']

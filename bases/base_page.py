@@ -2,14 +2,19 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select as Select
+from utils.config_reder import ConfigReader
+
 
 
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def find(self, by, value, timeout=10):
+    def find(self, by, value, timeout=ConfigReader.get_timeout()):
         return WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((by, value)))
+    
+    def find_all(self, by, value, timeout=ConfigReader.get_timeout()):
+        return WebDriverWait(self.driver, timeout).until(EC.presence_of_all_elements_located((by, value)))
     
     def select_dropdown(self,by, value,select_text):
         select_dropdown=Select(self.find(by, value))
