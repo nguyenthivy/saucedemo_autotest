@@ -3,13 +3,11 @@ import allure
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    # Lấy kết quả test
+
     outcome = yield
     report = outcome.get_result()
 
-    # Chỉ xử lý khi test bị fail ở giai đoạn "call"
     if report.when == "call" and report.failed:
-        # Lấy đối tượng test (class) và driver
         test_instance = getattr(item, "instance", None)
         driver = getattr(test_instance, "driver", None)
 
