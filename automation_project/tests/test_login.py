@@ -1,7 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-# Doạn này đảm bảo rằng các module trong thư mục cha có thể được import vào
 from bases.base_test import BaseTest
 from pages.login_page import LoginPage
 from utils.config_reder import ConfigReader
