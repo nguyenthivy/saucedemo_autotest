@@ -1,0 +1,16 @@
+{
+  "base_url": "https://www.saucedemo.com/",
+  "cridentials": {
+    "username": "standard_user",
+    "password": "secret_sauce1"
+  },
+  "products":{
+    "productstag": "T-Shirt"
+  },
+  "timeout": 10,
+  "checkout_infomation": {
+    "firstname": "John",
+    "lastname": "Doe",
+    "postalcode": "70000aaa"
+  }
+}
